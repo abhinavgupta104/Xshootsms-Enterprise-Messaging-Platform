@@ -8,62 +8,62 @@
 
 @layer base {
   :root {
-    --background: 222 47% 6%;
-    --foreground: 210 40% 98%;
+    --background: 90 50% 97%;
+    --foreground: 150 30% 15%;
 
-    --card: 222 47% 8%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 150 30% 15%;
 
-    --popover: 222 47% 8%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 30% 15%;
 
-    --primary: 199 89% 48%;
-    --primary-foreground: 222 47% 6%;
+    --primary: 120 45% 40%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 256 67% 52%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 150 30% 25%;
+    --secondary-foreground: 0 0% 100%;
 
-    --accent: 24 100% 55%;
-    --accent-foreground: 222 47% 6%;
+    --accent: 120 60% 45%;
+    --accent-foreground: 0 0% 100%;
 
-    --muted: 222 30% 14%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 90 20% 92%;
+    --muted-foreground: 150 15% 45%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 222 30% 18%;
-    --input: 222 30% 18%;
-    --ring: 199 89% 48%;
+    --border: 120 20% 85%;
+    --input: 120 20% 85%;
+    --ring: 120 45% 40%;
 
     --radius: 0.75rem;
 
-    /* Custom colors */
-    --navy-deep: 222 47% 4%;
-    --navy-dark: 222 47% 6%;
-    --midnight: 240 40% 10%;
-    --purple-dark: 256 50% 15%;
-    --cyan: 199 89% 48%;
-    --cyan-glow: 199 89% 60%;
-    --orange: 24 100% 55%;
-    --orange-glow: 24 100% 65%;
-    --electric-blue: 217 91% 60%;
+    /* Custom colors - Green theme */
+    --navy-deep: 150 30% 98%;
+    --navy-dark: 90 50% 97%;
+    --midnight: 120 20% 95%;
+    --purple-dark: 120 30% 90%;
+    --cyan: 120 45% 40%;
+    --cyan-glow: 120 50% 50%;
+    --orange: 120 60% 45%;
+    --orange-glow: 120 65% 55%;
+    --electric-blue: 150 40% 35%;
 
-    /* Glassmorphism */
-    --glass-bg: 222 47% 12%;
-    --glass-border: 222 30% 25%;
-    --glass-shadow: 222 47% 4%;
+    /* Glassmorphism - Light */
+    --glass-bg: 0 0% 100%;
+    --glass-border: 120 20% 85%;
+    --glass-shadow: 150 20% 70%;
 
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(222 47% 4%) 0%, hsl(240 40% 10%) 50%, hsl(256 50% 15%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(222 47% 10% / 0.8) 0%, hsl(222 47% 6% / 0.6) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(24 100% 55%) 0%, hsl(199 89% 48%) 100%);
-    --gradient-glow: radial-gradient(ellipse at center, hsl(199 89% 48% / 0.15) 0%, transparent 70%);
+    /* Gradients - Light green */
+    --gradient-hero: linear-gradient(135deg, hsl(90 50% 97%) 0%, hsl(120 30% 95%) 50%, hsl(90 40% 93%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100% / 0.9) 0%, hsl(90 30% 98% / 0.7) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(120 45% 40%) 0%, hsl(150 40% 35%) 100%);
+    --gradient-glow: radial-gradient(ellipse at center, hsl(120 45% 40% / 0.1) 0%, transparent 70%);
   }
 
   .dark {
-    --background: 222 47% 6%;
-    --foreground: 210 40% 98%;
+    --background: 150 30% 10%;
+    --foreground: 90 50% 97%;
   }
 }
 

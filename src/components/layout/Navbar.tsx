@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.jpeg";
 
 const navLinks = [
   { name: "Platform", href: "#platform" },
@@ -38,16 +39,10 @@ export const Navbar = () => {
         {/* Logo */}
         <motion.a
           href="#"
-          className="flex items-center gap-2 group"
+          className="flex items-center group"
           whileHover={{ scale: 1.02 }}
         >
-          <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-orange to-cyan flex items-center justify-center">
-            <span className="text-background font-bold text-lg">X</span>
-            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-orange to-cyan opacity-0 group-hover:opacity-50 blur-xl transition-opacity duration-300" />
-          </div>
-          <span className="text-xl font-bold text-foreground">
-            Xshoot<span className="text-gradient-accent">sms</span>
-          </span>
+          <img src={logo} alt="Xshootsms Logo" className="h-12 w-auto" />
         </motion.a>
 
         {/* Desktop Navigation */}
