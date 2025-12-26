@@ -190,14 +190,23 @@ export const Footer = ({ onOpenLegal }: FooterProps) => {
             <ul className="space-y-4 text-sm text-muted-foreground">
               <li className="flex gap-2">
                 <MapPin className="w-4 h-4 text-cyan mt-1" />
-                <span>
-                  Nucleus Ai
-                  D-9, Vyapar Marg, Sector 3,
-                  <br />
-                  Noida, UP 201301, India
+                <span className="leading-relaxed text-muted-foreground">
+  <strong className="text-foreground block">
+    Nucleus Ai
+  </strong>
 
-                  GST NO.- 09AAYFN8401A1Z4
-                </span>
+  <span className="block mt-2">
+    D-9, Vyapar Marg, Sector 3, Noida,<br />
+    Uttar Pradesh – 201301, India
+    
+  </span>
+
+  <span className="block mt-3 text-sm">
+    <span className="font-medium text-foreground">GST:</span>
+   <span className="font-medium text-foreground"> 09AAYFN8401A1Z4</span>
+  </span>
+</span>
+
               </li>
 
               <li className="flex gap-2">
