@@ -30,12 +30,12 @@ export const ContactModal = ({ open, onClose }: ContactModalProps) => {
         <div className="space-y-4">
           <div className="flex items-center gap-3 border rounded-lg p-3">
             <Phone className="text-cyan" />
-            <span>+91 12345 67890</span>
+            <span>+91 9739175550</span>
           </div>
 
           <div className="flex items-center gap-3 border rounded-lg p-3">
             <Mail className="text-orange" />
-            <span>sales@xshootsms.com</span>
+            <span>hello@xshootsms.com</span>
           </div>
         </div>
 
