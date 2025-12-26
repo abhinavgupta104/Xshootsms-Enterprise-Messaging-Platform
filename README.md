@@ -1,73 +1,52 @@
-# Welcome to your Lovable project
+🚀 Xshootsms – Enterprise Messaging Platform
 
-## Project info
+Xshootsms is a modern, enterprise-grade messaging and communication platform designed to help businesses send messages at scale with speed, reliability, and control.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+The platform focuses on a clean user experience, developer-friendly architecture, and production-ready design inspired by leading SaaS products.
 
-## How can I edit this code?
+This project is built and maintained by Abhinav Gupta and Sarthak Gupta.
 
-There are several ways of editing your application.
+✨ Features
 
-**Use Lovable**
+📩 Bulk SMS, RCS, WhatsApp & Voice API messaging
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+⚡ High-performance, scalable frontend
 
-Changes made via Lovable will be committed automatically to this repo.
+🎨 Modern SaaS UI with smooth animations
 
-**Use your preferred IDE**
+📱 Fully responsive (desktop, tablet, mobile)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+🧩 Modular component-based architecture
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+🔐 Legal compliance modals (Privacy, Terms, Cookies, GDPR)
 
-Follow these steps:
+🚀 Fast build & hot reload using Vite
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+🛠 Tech Stack
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Frontend: React + TypeScript
 
-# Step 3: Install the necessary dependencies.
-npm i
+Build Tool: Vite
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+Styling: Tailwind CSS
 
-**Edit a file directly in GitHub**
+Animations: Framer Motion
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Icons: Lucide React
 
-**Use GitHub Codespaces**
+Routing: React Router (used where required)
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+  PROJECT STRUCTURE
 
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+  src/
+├── assets/            # Images & static assets
+├── components/
+│   ├── layout/        # Navbar, Footer
+│   ├── modals/        # Contact, Opt-In, Legal modals
+│   ├── sections/      # Hero, Platform, Solutions, CTA, etc.
+│   └── ui/             # Reusable UI components
+├── pages/             # Index, NotFound
+├── hooks/             # Custom hooks
+├── lib/               # Utilities & helpers
+├── App.tsx
+├── main.tsx
