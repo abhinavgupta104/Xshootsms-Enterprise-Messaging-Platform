@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, MessageSquare, Phone, Mail, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom"; // ✅ ADDED
 
 type HeroProps = {
   onOpenOptIn: () => void;
@@ -63,12 +64,13 @@ export const Hero = ({ onOpenOptIn, onOpenContact }: HeroProps) => {
           reliability, and growth.
         </motion.p>
 
+        {/* CTAs */}
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Button
             className="btn-primary px-8 py-6 gap-2"
             onClick={onOpenOptIn}
           >
-           Get Started
+            Get Started
             <ArrowRight className="w-4 h-4" />
           </Button>
 
@@ -78,9 +80,18 @@ export const Hero = ({ onOpenOptIn, onOpenContact }: HeroProps) => {
           >
             Talk to an Expert
           </Button>
+
+          {/* ✅ NEW: View Pricing */}
+          <Link to="/pricing">
+            <Button
+              variant="outline"
+              className="px-8 py-6"
+            >
+              View Pricing
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
   );
 };
-

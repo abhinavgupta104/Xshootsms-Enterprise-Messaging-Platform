@@ -12,6 +12,7 @@ type NavbarProps = {
 const navLinks = [
   { name: "Platform", href: "#platform" },
   { name: "Solutions", href: "#solutions" },
+  { name: "Pricing", href: "/pricing" }, // ✅ ADDED
   { name: "Why Xshootsms", href: "#why-us" },
   { name: "Industries", href: "#industries" },
   { name: "Company", href: "#company" },
@@ -41,7 +42,7 @@ export const Navbar = ({ onOpenOptIn, onOpenContact }: NavbarProps) => {
     >
       <nav className="container-custom flex items-center justify-between h-20 px-4 md:px-8">
         {/* Logo */}
-        <motion.a href="#" whileHover={{ scale: 1.02 }}>
+        <motion.a href="/" whileHover={{ scale: 1.02 }}>
           <img src={logo} alt="Xshootsms Logo" className="h-20 w-auto" />
         </motion.a>
 
@@ -51,7 +52,7 @@ export const Navbar = ({ onOpenOptIn, onOpenContact }: NavbarProps) => {
             <a
               key={link.name}
               href={link.href}
-              className="text-muted-foreground hover:text-foreground text-sm font-medium"
+              className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors"
             >
               {link.name}
             </a>
