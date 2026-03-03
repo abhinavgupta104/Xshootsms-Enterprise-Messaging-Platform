@@ -1,0 +1,12 @@
+[build]
+  # No frontend build needed - frontend is hosted on BigRock
+  publish = "public"
+  command = "# no build"
+  functions = "netlify/functions"
+
+# Proxy /api requests to Netlify functions
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+

@@ -10,9 +10,18 @@ const stats = [
 ];
 
 const clientLogos = [
-  "TechCorp", "Finova", "HealthPlus", "EduSmart", 
-  "LogiFlow", "RetailMax", "CloudNine", "DataPrime",
-  "SecureNet", "GrowthLab", "PayEase", "MediaHub"
+  { icon: "🏦", label: "Banking & Finance" },
+  { icon: "🛒", label: "E-Commerce" },
+  { icon: "🏥", label: "Healthcare" },
+  { icon: "🎓", label: "EdTech" },
+  { icon: "🚚", label: "Logistics" },
+  { icon: "🏨", label: "Hospitality" },
+  { icon: "📱", label: "Telecom" },
+  { icon: "🏗️", label: "Real Estate" },
+  { icon: "💳", label: "FinTech" },
+  { icon: "🛡️", label: "Insurance" },
+  { icon: "🍔", label: "Food & Delivery" },
+  { icon: "✈️", label: "Travel & Tourism" },
 ];
 
 const AnimatedCounter = ({ value, suffix, duration = 2 }: { value: number; suffix: string; duration?: number }) => {
@@ -25,7 +34,7 @@ const AnimatedCounter = ({ value, suffix, duration = 2 }: { value: number; suffi
       let start = 0;
       const end = value;
       const stepTime = (duration * 1000) / end;
-      
+
       const timer = setInterval(() => {
         start += 1;
         setCount(start);
@@ -84,24 +93,30 @@ export const TrustStrip = () => {
       </div>
 
       {/* Logo Marquee */}
-      <div className="relative">
+      {/* Logo Marquee */}
+      <div className="relative w-full overflow-hidden mask-linear-gradient">
         {/* Gradient Masks */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10" />
-        
-        <div className="flex overflow-hidden">
+        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+
+        <div className="flex w-max">
           <motion.div
-            animate={{ x: [0, -50 * clientLogos.length] }}
-            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-            className="flex gap-12 items-center"
+            initial={{ x: 0 }}
+            animate={{ x: "-50%" }}
+            transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+            className="flex gap-16 items-center pr-16"
           >
-            {[...clientLogos, ...clientLogos].map((logo, index) => (
+            {/* Repeat list 4x to ensure smooth loop */}
+            {[...clientLogos, ...clientLogos, ...clientLogos, ...clientLogos].map((industry, index) => (
               <div
-                key={`${logo}-${index}`}
-                className="flex-shrink-0 px-6 py-3 rounded-lg bg-muted/20 border border-border/30"
+                key={`${industry.label}-${index}`}
+                className="flex items-center gap-3 opacity-60 hover:opacity-100 transition-opacity duration-300 cursor-pointer group"
               >
-                <span className="text-muted-foreground font-medium whitespace-nowrap">
-                  {logo}
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-white/5 to-white/10 group-hover:from-cyan/20 group-hover:to-blue-500/20 flex items-center justify-center border border-white/5 group-hover:border-cyan/30 transition-all text-xl">
+                  {industry.icon}
+                </div>
+                <span className="text-sm font-semibold text-muted-foreground group-hover:text-foreground tracking-wide transition-colors whitespace-nowrap">
+                  {industry.label}
                 </span>
               </div>
             ))}

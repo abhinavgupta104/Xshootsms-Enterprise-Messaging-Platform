@@ -12,6 +12,15 @@ dist
 dist-ssr
 *.local
 
+# Environment variables (NEVER push to GitHub!)
+.env
+.env.*
+
+# Test scripts
+test_gsheets.js
+simulate_overwrite.js
+testGroq.js
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

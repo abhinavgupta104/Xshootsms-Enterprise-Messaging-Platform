@@ -1,6 +1,14 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Link2, PenTool, Send, BarChart3, Sparkles } from "lucide-react";
+import {
+  fadeUp,
+  fadeLeft,
+  fadeRight,
+  staggerContainer,
+  viewport,
+  smoothTransition,
+} from "@/lib/animations";
 
 const steps = [
   {
@@ -40,22 +48,24 @@ export const HowItWorks = () => {
   const lineHeight = useTransform(scrollYProgress, [0.1, 0.9], ["0%", "100%"]);
 
   return (
-    <section className="section-padding relative overflow-hidden" ref={containerRef}>
+    <section id="how-it-works" className="section-padding relative overflow-hidden" ref={containerRef}>
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan/5 to-transparent" />
 
       <div className="container-custom relative z-10">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
           className="text-center mb-20"
         >
           <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
             className="inline-block px-4 py-2 rounded-full bg-orange/10 border border-orange/20 text-orange text-sm font-medium mb-6"
           >
             How It Works
@@ -75,7 +85,7 @@ export const HowItWorks = () => {
           <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-border">
             <motion.div
               className="absolute top-0 left-0 w-full bg-gradient-to-b from-cyan via-orange to-cyan"
-              style={{ height: lineHeight }}
+              style={{ height: lineHeight, willChange: "height" }}
             />
           </div>
 
@@ -83,19 +93,20 @@ export const HowItWorks = () => {
           {steps.map((step, index) => (
             <motion.div
               key={step.title}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`relative flex items-center gap-8 mb-16 last:mb-0 ${
-                index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-              }`}
+              variants={index % 2 === 0 ? fadeLeft : fadeRight}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-80px" }}
+              className={`relative flex items-center gap-8 mb-16 last:mb-0 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                }`}
             >
               {/* Icon Node */}
               <div className="absolute left-8 md:left-1/2 -translate-x-1/2 z-10">
                 <motion.div
-                  whileHover={{ scale: 1.1 }}
+                  whileHover={{ scale: 1.12 }}
+                  transition={smoothTransition}
                   className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan to-orange p-0.5"
+                  style={{ willChange: "transform" }}
                 >
                   <div className="w-full h-full rounded-2xl bg-background flex items-center justify-center">
                     <step.icon className="w-7 h-7 text-foreground" />
@@ -106,16 +117,16 @@ export const HowItWorks = () => {
               {/* Content Card */}
               <div className={`flex-1 pl-24 md:pl-0 ${index % 2 === 0 ? "md:pr-16" : "md:pl-16"}`}>
                 <motion.div
-                  whileHover={{ y: -4 }}
+                  whileHover={{ y: -5 }}
+                  transition={smoothTransition}
                   className="glass-card p-6 md:p-8"
+                  style={{ willChange: "transform" }}
                 >
                   <div className="flex items-center gap-3 mb-3">
                     <span className="text-xs font-semibold text-cyan bg-cyan/10 px-3 py-1 rounded-full">
                       Step {index + 1}
                     </span>
-                    <h3 className="text-xl font-semibold text-foreground">
-                      {step.title}
-                    </h3>
+                    <h3 className="text-xl font-semibold text-foreground">{step.title}</h3>
                   </div>
                   <p className="text-muted-foreground">{step.description}</p>
                 </motion.div>

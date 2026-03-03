@@ -92,9 +92,9 @@ export const ProductPreview = () => {
             <div className="grid md:grid-cols-3 gap-6">
               {/* Message Volume */}
               <div className="md:col-span-2 bg-muted/10 rounded-xl p-6">
-                <h4 className="text-foreground font-medium mb-1">
+                <h3 className="text-foreground font-medium mb-1">
                   Message Volume
-                </h4>
+                </h3>
                 <p className="text-xs text-muted-foreground mb-4">
                   Peak traffic observed during business hours (10 AM – 12 PM)
                 </p>
@@ -126,9 +126,9 @@ export const ProductPreview = () => {
 
               {/* Channel Distribution */}
               <div className="bg-muted/10 rounded-xl p-6">
-                <h4 className="text-foreground font-medium mb-4">
+                <h3 className="text-foreground font-medium mb-4">
                   Channel Distribution
-                </h4>
+                </h3>
 
                 <div className="relative w-32 h-32 mx-auto">
                   <svg viewBox="0 0 100 100" className="w-full h-full -rotate-90">

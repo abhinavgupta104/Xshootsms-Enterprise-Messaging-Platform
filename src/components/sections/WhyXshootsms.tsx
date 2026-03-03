@@ -1,15 +1,22 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
-import { 
-  Server, 
-  Shield, 
-  Zap, 
+import {
+  Server,
+  Shield,
+  Zap,
   TrendingUp,
   Globe,
   Clock,
   Award,
-  Lock
+  Lock,
 } from "lucide-react";
+import {
+  fadeUp,
+  scaleIn,
+  staggerContainer,
+  viewport,
+  smoothTransition,
+} from "@/lib/animations";
 
 const reasons = [
   {
@@ -38,18 +45,26 @@ const reasons = [
   },
 ];
 
-const AnimatedStat = ({ value, suffix, label }: { value: number; suffix: string; label: string }) => {
+const AnimatedStat = ({
+  value,
+  suffix,
+  label,
+}: {
+  value: number;
+  suffix: string;
+  label: string;
+}) => {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
   useEffect(() => {
     if (isInView) {
-      const duration = 2000;
+      const duration = 1800;
       const steps = 60;
       const stepValue = value / steps;
       const stepDuration = duration / steps;
-      
+
       let current = 0;
       const timer = setInterval(() => {
         current += stepValue;
@@ -68,7 +83,8 @@ const AnimatedStat = ({ value, suffix, label }: { value: number; suffix: string;
   return (
     <div ref={ref} className="text-center">
       <div className="text-3xl font-bold text-gradient-accent">
-        {count}{suffix}
+        {count}
+        {suffix}
       </div>
       <div className="text-sm text-muted-foreground">{label}</div>
     </div>
@@ -78,38 +94,36 @@ const AnimatedStat = ({ value, suffix, label }: { value: number; suffix: string;
 export const WhyXshootsms = () => {
   return (
     <section id="why-us" className="section-padding relative overflow-hidden">
-      {/* Animated Background */}
+      {/* Animated Background — GPU only */}
       <div className="absolute inset-0">
         <motion.div
-          animate={{ 
-            scale: [1, 1.1, 1],
-            opacity: [0.1, 0.15, 0.1]
-          }}
-          transition={{ duration: 10, repeat: Infinity }}
+          animate={{ scale: [1, 1.1, 1], opacity: [0.1, 0.15, 0.1] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
           className="absolute top-1/4 left-1/4 w-[600px] h-[600px] rounded-full bg-cyan/10 blur-[150px]"
+          style={{ willChange: "transform, opacity" }}
         />
         <motion.div
-          animate={{ 
-            scale: [1.1, 1, 1.1],
-            opacity: [0.1, 0.2, 0.1]
-          }}
-          transition={{ duration: 12, repeat: Infinity }}
+          animate={{ scale: [1.1, 1, 1.1], opacity: [0.1, 0.2, 0.1] }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
           className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-orange/10 blur-[120px]"
+          style={{ willChange: "transform, opacity" }}
         />
       </div>
 
       <div className="container-custom relative z-10">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
           className="text-center mb-16"
         >
           <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
             className="inline-block px-4 py-2 rounded-full bg-cyan/10 border border-cyan/20 text-cyan text-sm font-medium mb-6"
           >
             Why Choose Us
@@ -123,17 +137,22 @@ export const WhyXshootsms = () => {
           </p>
         </motion.div>
 
-        {/* Feature Cards */}
-        <div className="grid md:grid-cols-2 gap-6 mb-16">
-          {reasons.map((reason, index) => (
+        {/* Feature Cards — staggered */}
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+          className="grid md:grid-cols-2 gap-6 mb-16"
+        >
+          {reasons.map((reason) => (
             <motion.div
               key={reason.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+              variants={scaleIn}
               whileHover={{ y: -8 }}
+              transition={smoothTransition}
               className="glass-card p-8 group"
+              style={{ willChange: "transform" }}
             >
               <div className="flex items-start justify-between mb-6">
                 <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan to-orange p-0.5">
@@ -143,21 +162,18 @@ export const WhyXshootsms = () => {
                 </div>
                 <AnimatedStat {...reason.stat} />
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-3">
-                {reason.title}
-              </h3>
-              <p className="text-muted-foreground">
-                {reason.description}
-              </p>
+              <h3 className="text-xl font-semibold text-foreground mb-3">{reason.title}</h3>
+              <p className="text-muted-foreground">{reason.description}</p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Badges Row */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
           className="flex flex-wrap justify-center gap-4"
         >
           {[
@@ -166,13 +182,14 @@ export const WhyXshootsms = () => {
             { icon: Award, label: "Award Winning" },
             { icon: Lock, label: "Bank-Grade Security" },
           ].map((badge) => (
-            <div
+            <motion.div
               key={badge.label}
+              variants={scaleIn}
               className="flex items-center gap-3 px-6 py-3 rounded-full bg-muted/30 border border-border/50"
             >
               <badge.icon className="w-5 h-5 text-cyan" />
               <span className="text-sm text-foreground font-medium">{badge.label}</span>
-            </div>
+            </motion.div>
           ))}
         </motion.div>
       </div>

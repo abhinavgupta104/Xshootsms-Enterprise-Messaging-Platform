@@ -1,0 +1,15 @@
+# Xshootsms
+
+Xshootsms is a modern, enterprise-grade messaging and communication platform designed for businesses to send messages at scale.
+
+## Core Services
+- **Bulk SMS**: Scalable promotional and transactional SMS.
+- **WhatsApp Business API**: Rich media messaging and automation.
+- **RCS Messaging**: Enhanced interactive messaging.
+- **Voice API**: Programmable voice calls and IVR.
+
+## Documentation Entry Points
+- Home: https://xshootsms.com/
+- Pricing: https://xshootsms.com/pricing
+- FAQ: https://xshootsms.com/faq
+- Blog: https://xshootsms.com/blog

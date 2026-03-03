@@ -10,7 +10,8 @@ const TermsModal = ({ onClose }: LegalModalProps) => {
       <div className="relative my-16 w-full max-w-4xl rounded-xl bg-background p-8 shadow-2xl">
         <button
           onClick={onClose}
-          className="absolute right-4 top-4 text-muted-foreground hover:text-foreground"
+          className="absolute top-4 right-4 text-muted-foreground hover:text-foreground min-h-12 min-w-12 flex items-center justify-center"
+          aria-label="Close terms of service"
         >
           <X size={20} />
         </button>
@@ -21,93 +22,93 @@ const TermsModal = ({ onClose }: LegalModalProps) => {
           <p>
             These Terms of Service (“Terms”) govern your access to and use of the Xshootsms platform, website, APIs, and messaging services. By using our services, you agree to be bound by these Terms.
 
-About Our Services
+            About Our Services
 
-We provide enterprise communication solutions including SMS, WhatsApp messaging, email, voice services, APIs, and automation tools that enable businesses to send and manage messages at scale through their applications or systems.
+            We provide enterprise communication solutions including SMS, WhatsApp messaging, email, voice services, APIs, and automation tools that enable businesses to send and manage messages at scale through their applications or systems.
 
-Our services may include delivery reports, analytics, dashboards, APIs (HTTP, SMPP, XML), and developer tools.
+            Our services may include delivery reports, analytics, dashboards, APIs (HTTP, SMPP, XML), and developer tools.
 
-Eligibility
+            Eligibility
 
-You must be a business entity or authorized representative to use our services. You agree to provide accurate, current, and complete information when registering or using the platform.
+            You must be a business entity or authorized representative to use our services. You agree to provide accurate, current, and complete information when registering or using the platform.
 
-Client Responsibilities
+            Client Responsibilities
 
-You are responsible for:
+            You are responsible for:
 
-Ensuring all message content complies with applicable laws and regulations
+            Ensuring all message content complies with applicable laws and regulations
 
-Obtaining all required consents from end users before sending messages
+            Obtaining all required consents from end users before sending messages
 
-Including opt-out mechanisms for promotional messages where required
+            Including opt-out mechanisms for promotional messages where required
 
-Securing your account credentials and access keys
+            Securing your account credentials and access keys
 
-Preventing misuse, spam, fraud, or unlawful activity using our services
+            Preventing misuse, spam, fraud, or unlawful activity using our services
 
-You must not use our platform for illegal, abusive, or deceptive purposes.
+            You must not use our platform for illegal, abusive, or deceptive purposes.
 
-Message Content
+            Message Content
 
-You retain responsibility for all content sent using our services. We do not review, approve, or control message content and are not liable for content created or transmitted by you.
+            You retain responsibility for all content sent using our services. We do not review, approve, or control message content and are not liable for content created or transmitted by you.
 
-APIs & Developer Access
+            APIs & Developer Access
 
-We may provide APIs, documentation, and developer tools to integrate our services into your systems. You are responsible for ensuring secure implementation and compliance with our technical guidelines.
+            We may provide APIs, documentation, and developer tools to integrate our services into your systems. You are responsible for ensuring secure implementation and compliance with our technical guidelines.
 
-Service Availability
+            Service Availability
 
-We strive to provide reliable services but do not guarantee uninterrupted or error-free delivery. Message delivery may be affected by network issues, telecom operators, or factors beyond our control.
+            We strive to provide reliable services but do not guarantee uninterrupted or error-free delivery. Message delivery may be affected by network issues, telecom operators, or factors beyond our control.
 
-Fees & Billing
+            Fees & Billing
 
-You agree to pay all applicable fees associated with your usage. Fees may be usage-based, recurring, or one-time, as agreed. Failure to pay may result in service suspension or termination.
+            You agree to pay all applicable fees associated with your usage. Fees may be usage-based, recurring, or one-time, as agreed. Failure to pay may result in service suspension or termination.
 
-Termination
+            Termination
 
-We may suspend or terminate access to our services if:
+            We may suspend or terminate access to our services if:
 
-You violate these Terms
+            You violate these Terms
 
-Required payments are not made
+            Required payments are not made
 
-We are legally required to do so
+            We are legally required to do so
 
-Upon termination, you must stop using our services and APIs.
+            Upon termination, you must stop using our services and APIs.
 
-Intellectual Property
+            Intellectual Property
 
-We retain all rights, title, and interest in our platform, software, APIs, and content. You receive a limited, non-exclusive right to use our services during the term of your agreement.
+            We retain all rights, title, and interest in our platform, software, APIs, and content. You receive a limited, non-exclusive right to use our services during the term of your agreement.
 
-Data Protection & Privacy
+            Data Protection & Privacy
 
-You are responsible for obtaining all necessary user consents under applicable data protection laws. We process personal data only to provide our services and in accordance with our Privacy Policy.
+            You are responsible for obtaining all necessary user consents under applicable data protection laws. We process personal data only to provide our services and in accordance with our Privacy Policy.
 
-Disclaimer
+            Disclaimer
 
-Our services are provided “as is” and “as available.” We disclaim all warranties to the extent permitted by law, including implied warranties of merchantability or fitness for a particular purpose.
+            Our services are provided “as is” and “as available.” We disclaim all warranties to the extent permitted by law, including implied warranties of merchantability or fitness for a particular purpose.
 
-Limitation of Liability
+            Limitation of Liability
 
-To the maximum extent permitted by law, we are not liable for indirect, incidental, special, or consequential damages, including lost profits or business interruption.
+            To the maximum extent permitted by law, we are not liable for indirect, incidental, special, or consequential damages, including lost profits or business interruption.
 
-Our total liability shall not exceed the fees paid by you for the services during the preceding twelve (12) months.
+            Our total liability shall not exceed the fees paid by you for the services during the preceding twelve (12) months.
 
-Indemnification
+            Indemnification
 
-You agree to indemnify and hold us harmless from claims, damages, or losses arising from your misuse of the services, violation of laws, or breach of these Terms.
+            You agree to indemnify and hold us harmless from claims, damages, or losses arising from your misuse of the services, violation of laws, or breach of these Terms.
 
-Force Majeure
+            Force Majeure
 
-We are not responsible for delays or failures caused by events beyond our reasonable control, including network outages, natural disasters, or governmental actions.
+            We are not responsible for delays or failures caused by events beyond our reasonable control, including network outages, natural disasters, or governmental actions.
 
-Governing Law & Dispute Resolution
+            Governing Law & Dispute Resolution
 
-These Terms are governed by the laws of India. Any disputes shall be resolved through arbitration in accordance with applicable Indian arbitration laws.
+            These Terms are governed by the laws of India. Any disputes shall be resolved through arbitration in accordance with applicable Indian arbitration laws.
 
-Changes to These Terms
+            Changes to These Terms
 
-We may update these Terms from time to time. Continued use of the services after changes means you accept the updated Terms.
+            We may update these Terms from time to time. Continued use of the services after changes means you accept the updated Terms.
           </p>
 
           <h2 className="text-xl font-semibold text-foreground">

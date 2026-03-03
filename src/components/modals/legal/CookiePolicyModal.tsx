@@ -10,7 +10,8 @@ const CookiePolicyModal = ({ onClose }: LegalModalProps) => {
       <div className="relative my-16 w-full max-w-4xl rounded-xl bg-background p-8 shadow-2xl">
         <button
           onClick={onClose}
-          className="absolute right-4 top-4 text-muted-foreground hover:text-foreground"
+          className="absolute top-4 right-4 text-muted-foreground hover:text-foreground min-h-12 min-w-12 flex items-center justify-center"
+          aria-label="Close cookie policy"
         >
           <X size={20} />
         </button>
@@ -19,57 +20,57 @@ const CookiePolicyModal = ({ onClose }: LegalModalProps) => {
 
         <div className="space-y-4 text-muted-foreground leading-relaxed">
           <p>
-           We use cookies and similar tracking technologies to improve your experience, analyze usage, and enhance the performance of our website and services.
+            We use cookies and similar tracking technologies to improve your experience, analyze usage, and enhance the performance of our website and services.
 
-This Cookie Policy explains what cookies are, how we use them, and the choices available to you.
+            This Cookie Policy explains what cookies are, how we use them, and the choices available to you.
 
-What Are Cookies
+            What Are Cookies
 
-Cookies are small text files stored on your device by your web browser. They help websites recognize your device, remember preferences, and improve functionality. Cookies do not typically identify you personally unless you choose to provide such information.
+            Cookies are small text files stored on your device by your web browser. They help websites recognize your device, remember preferences, and improve functionality. Cookies do not typically identify you personally unless you choose to provide such information.
 
-Types of Cookies We Use
+            Types of Cookies We Use
 
-Essential Cookies
-These cookies are necessary for the website to function properly and cannot be disabled in our systems.
+            Essential Cookies
+            These cookies are necessary for the website to function properly and cannot be disabled in our systems.
 
-Preference Cookies
-These cookies remember your settings, such as language or region, to provide a more personalized experience.
+            Preference Cookies
+            These cookies remember your settings, such as language or region, to provide a more personalized experience.
 
-Analytics Cookies
-These cookies help us understand how users interact with our website, allowing us to improve performance and usability.
+            Analytics Cookies
+            These cookies help us understand how users interact with our website, allowing us to improve performance and usability.
 
-Marketing Cookies
-These cookies may be used to deliver relevant content and measure the effectiveness of marketing campaigns.
+            Marketing Cookies
+            These cookies may be used to deliver relevant content and measure the effectiveness of marketing campaigns.
 
-How We Use Cookies
+            How We Use Cookies
 
-We use cookies to:
+            We use cookies to:
 
-Remember user preferences
+            Remember user preferences
 
-Improve website functionality and security
+            Improve website functionality and security
 
-Analyze traffic and usage patterns
+            Analyze traffic and usage patterns
 
-Prevent fraud and misuse
+            Prevent fraud and misuse
 
-Deliver relevant content and communications
+            Deliver relevant content and communications
 
-Third-Party Cookies
+            Third-Party Cookies
 
-We may allow trusted third-party service providers (such as analytics providers) to place cookies on our website. These cookies are governed by the respective third party’s privacy policies.
+            We may allow trusted third-party service providers (such as analytics providers) to place cookies on our website. These cookies are governed by the respective third party’s privacy policies.
 
-Your Consent
+            Your Consent
 
-We process cookies based on your consent. By clicking “Allow Cookies” or continuing to use our website, you agree to the use of cookies as described in this policy.
+            We process cookies based on your consent. By clicking “Allow Cookies” or continuing to use our website, you agree to the use of cookies as described in this policy.
 
-Managing or Disabling Cookies
+            Managing or Disabling Cookies
 
-You can control or disable cookies through your browser settings. Please note that disabling cookies may affect certain features or functionality of the website.
+            You can control or disable cookies through your browser settings. Please note that disabling cookies may affect certain features or functionality of the website.
 
-Changes to This Cookie Policy
+            Changes to This Cookie Policy
 
-We may update this Cookie Policy from time to time. Any changes will be effective once posted on this page.
+            We may update this Cookie Policy from time to time. Any changes will be effective once posted on this page.
           </p>
 
           <h2 className="text-xl font-semibold text-foreground">

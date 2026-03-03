@@ -10,13 +10,21 @@ import {
   ArrowRight,
   ChevronDown,
 } from "lucide-react";
+import {
+  fadeUp,
+  scaleIn,
+  staggerContainer,
+  viewport,
+  smoothTransition,
+  EASE_OUT_EXPO,
+} from "@/lib/animations";
 
 const features = [
   {
     icon: MessageSquare,
     title: "Bulk SMS",
     short:
-      "Send millions of SMS messages globally with carrier-grade delivery and real-time analytics.",
+      "Send millions of text messages globally with carrier-grade delivery, DLT compliance, and real-time analytics.",
     details: [
       "High-throughput SMS delivery across global operators",
       "DLT-compliant transactional & promotional routes",
@@ -104,33 +112,45 @@ export const PlatformOverview = () => {
 
       <div className="container-custom relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+          className="text-center mb-16"
+        >
           <span className="inline-block px-4 py-2 rounded-full bg-cyan/10 border border-cyan/20 text-cyan text-sm font-medium mb-6">
             Platform
           </span>
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
-            Complete Messaging{" "}
-            <span className="text-gradient-accent">Infrastructure</span>
+            Complete Communication{" "}
+            <span className="text-gradient-accent">Channels &amp; APIs</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Everything you need to communicate with your customers at scale,
-            through their preferred channels.
+            Every channel your customers use — SMS, WhatsApp, RCS, and Voice — unified under one powerful cloud API.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Cards — staggered entrance */}
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
           {features.map((feature, index) => {
             const isOpen = openIndex === index;
 
             return (
               <motion.div
                 key={feature.title}
+                variants={scaleIn}
                 whileHover={{ y: -6 }}
+                transition={smoothTransition}
                 className="glass-card p-6 md:p-8 cursor-pointer transition-all hover:border-cyan/30"
-                onClick={() =>
-                  setOpenIndex(isOpen ? null : index)
-                }
+                style={{ willChange: "transform" }}
+                onClick={() => setOpenIndex(isOpen ? null : index)}
               >
                 {/* Icon */}
                 <div
@@ -146,26 +166,25 @@ export const PlatformOverview = () => {
                   <h3 className="text-xl font-semibold text-foreground">
                     {feature.title}
                   </h3>
-                  <ChevronDown
-                    className={`w-5 h-5 transition-transform ${
-                      isOpen ? "rotate-180" : ""
-                    }`}
-                  />
+                  <motion.div
+                    animate={{ rotate: isOpen ? 180 : 0 }}
+                    transition={{ duration: 0.35, ease: EASE_OUT_EXPO }}
+                  >
+                    <ChevronDown className="w-5 h-5 text-muted-foreground" />
+                  </motion.div>
                 </div>
 
                 {/* Short text */}
-                <p className="text-muted-foreground mt-3">
-                  {feature.short}
-                </p>
+                <p className="text-muted-foreground mt-3">{feature.short}</p>
 
                 {/* Expanded content */}
-                <AnimatePresence>
+                <AnimatePresence initial={false}>
                   {isOpen && (
                     <motion.div
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
+                      transition={{ duration: 0.4, ease: EASE_OUT_EXPO }}
                       className="overflow-hidden mt-4 border-t border-border/50 pt-4 space-y-2 text-sm text-muted-foreground"
                     >
                       {feature.details.map((item, i) => (
@@ -183,7 +202,7 @@ export const PlatformOverview = () => {
               </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,0 +1,2 @@
+≡ƒöÑ  200.html is present in the sourceDir (C:\Users\Abhinav\xshootsms-elevate\dist). You can not run react-snap twice - this will break the build
+

@@ -2,12 +2,12 @@ import { X, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 type ContactModalProps = {
-  open: boolean;
+  isOpen: boolean;
   onClose: () => void;
 };
 
-export const ContactModal = ({ open, onClose }: ContactModalProps) => {
-  if (!open) return null;
+export const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
+  if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 z-[99999] flex items-center justify-center bg-black/50">
@@ -15,7 +15,8 @@ export const ContactModal = ({ open, onClose }: ContactModalProps) => {
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-muted-foreground hover:text-foreground"
+          className="absolute top-4 right-4 text-muted-foreground hover:text-foreground min-h-12 min-w-12 flex items-center justify-center"
+          aria-label="Close contact modal"
         >
           <X />
         </button>

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { scaleIn, viewport, EASE_OUT_EXPO } from "@/lib/animations";
 
 const testimonials = [
   {
@@ -35,9 +36,14 @@ const testimonials = [
 
 export const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(1); // 1 = forward, -1 = backward
 
-  const next = () => setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-  const prev = () => setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  const go = (dir: number) => {
+    setDirection(dir);
+    setCurrentIndex((prev) =>
+      (prev + dir + testimonials.length) % testimonials.length
+    );
+  };
 
   return (
     <section id="testimonials" className="section-padding relative overflow-hidden">
@@ -47,15 +53,17 @@ export const Testimonials = () => {
       <div className="container-custom relative z-10">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          variants={scaleIn}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
           className="text-center mb-16"
         >
           <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            variants={scaleIn}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
             className="inline-block px-4 py-2 rounded-full bg-secondary/20 border border-secondary/30 text-secondary-foreground text-sm font-medium mb-6"
           >
             Testimonials
@@ -72,14 +80,16 @@ export const Testimonials = () => {
         {/* Testimonial Carousel */}
         <div className="max-w-4xl mx-auto">
           <div className="relative">
-            <AnimatePresence mode="wait">
+            <AnimatePresence mode="wait" custom={direction}>
               <motion.div
                 key={currentIndex}
-                initial={{ opacity: 0, x: 50 }}
+                custom={direction}
+                initial={{ opacity: 0, x: direction * 60 }}
                 animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -50 }}
-                transition={{ duration: 0.4 }}
-                className="glass-card p-8 md:p-12"
+                exit={{ opacity: 0, x: direction * -60 }}
+                transition={{ duration: 0.5, ease: EASE_OUT_EXPO }}
+                className="glass-card p-6 md:p-12"
+                style={{ willChange: "transform, opacity" }}
               >
                 {/* Quote Icon */}
                 <div className="absolute top-8 right-8 opacity-10">
@@ -88,9 +98,9 @@ export const Testimonials = () => {
 
                 {/* Metric Badge */}
                 <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.2, type: "spring" }}
+                  initial={{ scale: 0, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ delay: 0.15, duration: 0.4, ease: EASE_OUT_EXPO }}
                   className="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-orange/20 to-cyan/20 border border-orange/30 text-foreground text-sm font-medium mb-8"
                 >
                   {testimonials[currentIndex].metric}
@@ -121,34 +131,39 @@ export const Testimonials = () => {
             {/* Navigation */}
             <div className="flex items-center justify-center gap-4 mt-8">
               <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                onClick={prev}
-                className="w-12 h-12 rounded-full bg-muted/30 border border-border/50 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all"
+                whileHover={{ scale: 1.12 }}
+                whileTap={{ scale: 0.92 }}
+                transition={{ duration: 0.25, ease: EASE_OUT_EXPO }}
+                onClick={() => go(-1)}
+                className="w-12 h-12 rounded-full bg-muted/30 border border-border/50 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
               >
                 <ChevronLeft className="w-5 h-5" />
               </motion.button>
-              
+
               {/* Dots */}
               <div className="flex gap-2">
                 {testimonials.map((_, i) => (
                   <button
                     key={i}
-                    onClick={() => setCurrentIndex(i)}
-                    className={`w-2 h-2 rounded-full transition-all ${
-                      i === currentIndex
+                    onClick={() => {
+                      setDirection(i > currentIndex ? 1 : -1);
+                      setCurrentIndex(i);
+                    }}
+                    aria-label={`View testimonial ${i + 1}`}
+                    className={`h-2 rounded-full transition-all duration-300 min-h-[8px] ${i === currentIndex
                         ? "w-8 bg-gradient-to-r from-orange to-cyan"
-                        : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
-                    }`}
+                        : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50"
+                      }`}
                   />
                 ))}
               </div>
 
               <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                onClick={next}
-                className="w-12 h-12 rounded-full bg-muted/30 border border-border/50 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all"
+                whileHover={{ scale: 1.12 }}
+                whileTap={{ scale: 0.92 }}
+                transition={{ duration: 0.25, ease: EASE_OUT_EXPO }}
+                onClick={() => go(1)}
+                className="w-12 h-12 rounded-full bg-muted/30 border border-border/50 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
               >
                 <ChevronRight className="w-5 h-5" />
               </motion.button>

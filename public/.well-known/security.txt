@@ -1,0 +1,8 @@
+# security.txt for Xshootsms
+# More info: https://securitytxt.org/
+
+Contact: mailto:support@xshootsms.com
+Preferred-Languages: en, hi
+Canonical: https://xshootsms.com/.well-known/security.txt
+Policy: https://xshootsms.com/privacy
+# Acknowledgments: https://xshootsms.com/hall-of-fame (if you create one later)

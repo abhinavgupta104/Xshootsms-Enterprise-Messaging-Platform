@@ -10,7 +10,8 @@ const GDPRModal = ({ onClose }: LegalModalProps) => {
       <div className="relative my-16 w-full max-w-4xl rounded-xl bg-background p-8 shadow-2xl">
         <button
           onClick={onClose}
-          className="absolute right-4 top-4 text-muted-foreground hover:text-foreground"
+          className="absolute top-4 right-4 text-muted-foreground hover:text-foreground min-h-12 min-w-12 flex items-center justify-center"
+          aria-label="Close GDPR information"
         >
           <X size={20} />
         </button>
@@ -19,55 +20,55 @@ const GDPRModal = ({ onClose }: LegalModalProps) => {
 
         <div className="space-y-4 text-muted-foreground leading-relaxed">
           <p>
-           We are committed to protecting your personal data and respecting your privacy rights in accordance with the General Data Protection Regulation (GDPR).
+            We are committed to protecting your personal data and respecting your privacy rights in accordance with the General Data Protection Regulation (GDPR).
 
-This notice explains how we handle personal data and the rights available to you under GDPR.
+            This notice explains how we handle personal data and the rights available to you under GDPR.
 
-How We Process Personal Data
+            How We Process Personal Data
 
-We process personal data only when there is a lawful basis to do so, including:
+            We process personal data only when there is a lawful basis to do so, including:
 
-Your consent
+            Your consent
 
-Performance of a contract
+            Performance of a contract
 
-Compliance with legal obligations
+            Compliance with legal obligations
 
-Legitimate business interests
+            Legitimate business interests
 
-Personal data is used solely to provide, operate, and improve our services.
+            Personal data is used solely to provide, operate, and improve our services.
 
-Your Rights Under GDPR
+            Your Rights Under GDPR
 
-Subject to applicable law, you have the right to:
+            Subject to applicable law, you have the right to:
 
-Access your personal data
+            Access your personal data
 
-Request correction of inaccurate or incomplete data
+            Request correction of inaccurate or incomplete data
 
-Request deletion of your data
+            Request deletion of your data
 
-Restrict or object to processing
+            Restrict or object to processing
 
-Request data portability
+            Request data portability
 
-Withdraw consent at any time (where processing is based on consent)
+            Withdraw consent at any time (where processing is based on consent)
 
-Data Retention
+            Data Retention
 
-We retain personal data only for as long as necessary to fulfill the purposes for which it was collected, or as required by law.
+            We retain personal data only for as long as necessary to fulfill the purposes for which it was collected, or as required by law.
 
-Data Security
+            Data Security
 
-We implement appropriate technical and organizational measures to protect personal data against unauthorized access, loss, misuse, or disclosure. However, no system can guarantee absolute security.
+            We implement appropriate technical and organizational measures to protect personal data against unauthorized access, loss, misuse, or disclosure. However, no system can guarantee absolute security.
 
-Data Transfers
+            Data Transfers
 
-Your personal data may be transferred to and processed in countries outside your jurisdiction, including India. We ensure appropriate safeguards are in place for such transfers.
+            Your personal data may be transferred to and processed in countries outside your jurisdiction, including India. We ensure appropriate safeguards are in place for such transfers.
 
-Third-Party Processing
+            Third-Party Processing
 
-We may share personal data with trusted third-party service providers solely for service delivery and operational purposes. These providers are required to process data in compliance with GDPR standards.
+            We may share personal data with trusted third-party service providers solely for service delivery and operational purposes. These providers are required to process data in compliance with GDPR standards.
           </p>
 
           <h2 className="text-xl font-semibold text-foreground">

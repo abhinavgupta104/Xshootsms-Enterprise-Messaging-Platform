@@ -1,0 +1,11 @@
+failed to load config from C:\Users\Abhinav\xshootsms-elevate\vite.config.ts
+error during build:
+ReferenceError: require is not defined in ES module scope, you can use import instead
+    at file:///C:/Users/Abhinav/xshootsms-elevate/node_modules/vite-plugin-prerender/dist/index.mjs:6:21
+    at ModuleJob.run (node:internal/modules/esm/module_job:413:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:660:26)
+    at async loadConfigFromBundledFile (file:///C:/Users/Abhinav/xshootsms-elevate/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:66958:15)
+    at async loadConfigFromFile (file:///C:/Users/Abhinav/xshootsms-elevate/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:66799:24)
+    at async resolveConfig (file:///C:/Users/Abhinav/xshootsms-elevate/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:66399:24)
+    at async build (file:///C:/Users/Abhinav/xshootsms-elevate/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:65487:18)
+    at async CAC.<anonymous> (file:///C:/Users/Abhinav/xshootsms-elevate/node_modules/vite/dist/node/cli.js:829:5)
