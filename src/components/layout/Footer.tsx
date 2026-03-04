@@ -49,7 +49,7 @@ const footerLinks = {
 const socialLinks = [
   {
     icon: Instagram,
-    href: "https://www.instagram.com/xshootsms?igsh=MWN5dHFyNmk1M2dsZQ==",
+    href: "https://www.instagram.com/xshootsms_/",
     label: "Instagram",
   },
   {

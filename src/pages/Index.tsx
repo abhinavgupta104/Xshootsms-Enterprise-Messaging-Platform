@@ -93,7 +93,7 @@ export default function Index() {
               },
               "sameAs": [
                 "https://www.facebook.com/shootbulksms",
-                "https://www.instagram.com/xshootsms?igsh=MWN5dHFyNmk1M2dsZQ=="
+                "https://www.instagram.com/xshootsms_/"
               ]
             }
           `}

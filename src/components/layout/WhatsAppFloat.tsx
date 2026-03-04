@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Phone, Instagram } from "lucide-react";
 
 const WA_URL = "https://wa.me/919739175550?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Xshootsms%20messaging%20solutions.";
-const INSTA_URL = "https://www.instagram.com/xshootsms?igsh=MWN5dHFyNmk1M2dsZQ==";
+const INSTA_URL = "https://www.instagram.com/xshootsms_/";
 const PHONE_URL = "tel:+919739175550";
 
 const ContactButton = ({
