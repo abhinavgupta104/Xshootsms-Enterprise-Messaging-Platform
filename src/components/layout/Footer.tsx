@@ -10,7 +10,7 @@ import {
   Award,
   ArrowRight,
 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logoUrl from "../../assets/xshootsms-logo.png";
 
 /* ---------------- TYPES ---------------- */
@@ -193,47 +193,83 @@ export const Footer = ({ onOpenLegal }: FooterProps) => {
             </h3>
             <ul className="space-y-3 text-sm">
               <li>
-                <button
-                  type="button"
-                  onClick={() => onOpenLegal("privacy")}
-                  className="text-muted-foreground hover:text-cyan transition-colors text-left inline-flex items-center gap-1 group"
-                >
-                  <span>Privacy</span>
-                  <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </button>
+                {useLocation().pathname === "/" ? (
+                  <button
+                    type="button"
+                    onClick={() => onOpenLegal("privacy")}
+                    className="text-muted-foreground hover:text-cyan transition-colors text-left inline-flex items-center gap-1 group"
+                  >
+                    <span>Privacy</span>
+                    <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </button>
+                ) : (
+                  <Link to="/privacy" className="text-muted-foreground hover:text-cyan transition-colors inline-flex items-center gap-1 group">
+                    <span>Privacy</span>
+                    <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </Link>
+                )}
               </li>
 
               <li>
-                <button
-                  type="button"
-                  onClick={() => onOpenLegal("terms")}
-                  className="text-muted-foreground hover:text-cyan transition-colors text-left inline-flex items-center gap-1 group"
-                >
-                  <span>Terms</span>
-                  <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </button>
+                {useLocation().pathname === "/" ? (
+                  <button
+                    type="button"
+                    onClick={() => onOpenLegal("terms")}
+                    className="text-muted-foreground hover:text-cyan transition-colors text-left inline-flex items-center gap-1 group"
+                  >
+                    <span>Terms</span>
+                    <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </button>
+                ) : (
+                  <Link to="/terms" className="text-muted-foreground hover:text-cyan transition-colors inline-flex items-center gap-1 group">
+                    <span>Terms</span>
+                    <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </Link>
+                )}
               </li>
 
               <li>
-                <button
-                  type="button"
-                  onClick={() => onOpenLegal("cookies")}
-                  className="text-muted-foreground hover:text-cyan transition-colors text-left inline-flex items-center gap-1 group"
-                >
-                  <span>Cookies</span>
-                  <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </button>
+                {useLocation().pathname === "/" ? (
+                  <button
+                    type="button"
+                    onClick={() => onOpenLegal("cookies")}
+                    className="text-muted-foreground hover:text-cyan transition-colors text-left inline-flex items-center gap-1 group"
+                  >
+                    <span>Cookies</span>
+                    <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </button>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => onOpenLegal("cookies")}
+                    className="text-muted-foreground hover:text-cyan transition-colors text-left inline-flex items-center gap-1 group"
+                  >
+                    <span>Cookies</span>
+                    <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </button>
+                )}
               </li>
 
               <li>
-                <button
-                  type="button"
-                  onClick={() => onOpenLegal("gdpr")}
-                  className="text-muted-foreground hover:text-cyan transition-colors text-left inline-flex items-center gap-1 group"
-                >
-                  <span>GDPR</span>
-                  <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </button>
+                {useLocation().pathname === "/" ? (
+                  <button
+                    type="button"
+                    onClick={() => onOpenLegal("gdpr")}
+                    className="text-muted-foreground hover:text-cyan transition-colors text-left inline-flex items-center gap-1 group"
+                  >
+                    <span>GDPR</span>
+                    <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </button>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => onOpenLegal("gdpr")}
+                    className="text-muted-foreground hover:text-cyan transition-colors text-left inline-flex items-center gap-1 group"
+                  >
+                    <span>GDPR</span>
+                    <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </button>
+                )}
               </li>
             </ul>
           </div>

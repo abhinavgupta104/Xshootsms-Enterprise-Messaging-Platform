@@ -22,7 +22,14 @@
       "/",
       "/pricing",
       "/blog",
-      "/faq"
+      "/faq",
+      "/privacy",
+      "/terms",
+      "/get-a-quote",
+      "/lp-rcs",
+      "/lp-voice-call",
+      "/lp-whatsapp-api",
+      "/lp-bulk-sms"
     ]
   },
   "dependencies": {

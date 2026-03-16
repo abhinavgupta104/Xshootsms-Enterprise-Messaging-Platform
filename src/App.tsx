@@ -21,6 +21,13 @@ const Pricing = lazy(() => import("./pages/Pricing"));
 const Blog = lazy(() => import("./pages/Blog").then(m => ({ default: m.Blog })));
 const BlogPost = lazy(() => import("./pages/BlogPost").then(m => ({ default: m.BlogPost })));
 const FAQ = lazy(() => import("./pages/FAQ"));
+const Privacy = lazy(() => import("./pages/Privacy"));
+const Terms = lazy(() => import("./pages/Terms"));
+const Quote = lazy(() => import("./pages/Quote"));
+const LpRcs = lazy(() => import("./pages/LpRcs"));
+const LpVoiceCall = lazy(() => import("./pages/LpVoiceCall"));
+const LpWhatsappApi = lazy(() => import("./pages/LpWhatsappApi"));
+const LpBulkSms = lazy(() => import("./pages/LpBulkSms"));
 
 export default function App() {
   const location = useLocation();
@@ -46,6 +53,13 @@ export default function App() {
         <Route path="/" element={<Index />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/faq" element={<FAQ />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/get-a-quote" element={<Quote />} />
+        <Route path="/lp-rcs" element={<LpRcs />} />
+        <Route path="/lp-voice-call" element={<LpVoiceCall />} />
+        <Route path="/lp-whatsapp-api" element={<LpWhatsappApi />} />
+        <Route path="/lp-bulk-sms" element={<LpBulkSms />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
       </Routes>

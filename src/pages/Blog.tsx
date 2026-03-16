@@ -24,7 +24,7 @@ interface Post {
     slug: { current: string };
     title: string;
     excerpt: string;
-    mainImage: unknown;
+    mainImage: unknown | null;
     author: string;
     publishedAt: string;
     readTime: string;
@@ -85,6 +85,8 @@ const mockPosts: Post[] = [
     },
 ];
 
+const BLOG_FETCH_TIMEOUT_MS = 8000;
+
 export const Blog = () => {
     const [posts, setPosts] = useState<Post[]>([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -96,21 +98,36 @@ export const Blog = () => {
     const [legalModal, setLegalModal] = useState<LegalType>(null);
 
     useEffect(() => {
+        let isMounted = true;
         const query = `*[_type == "post"] | order(publishedAt desc) {
       title, slug, excerpt, mainImage,
       "author": author->name,
       publishedAt, readTime,
       "category": categories[0]->title
     }`;
-        client.fetch(query)
+
+        const timeoutPromise = new Promise<never>((_, reject) => {
+            setTimeout(() => reject(new Error("Blog fetch timeout")), BLOG_FETCH_TIMEOUT_MS);
+        });
+
+        Promise.race([client.fetch(query), timeoutPromise])
             .then((data) => {
-                setPosts(data && data.length > 0 ? data : mockPosts);
-                setIsLoading(false);
+                if (!isMounted) return;
+                const safeData = Array.isArray(data) && data.length > 0 ? data : mockPosts;
+                setPosts(safeData);
             })
             .catch(() => {
+                if (!isMounted) return;
                 setPosts(mockPosts);
+            })
+            .finally(() => {
+                if (!isMounted) return;
                 setIsLoading(false);
             });
+
+        return () => {
+            isMounted = false;
+        };
     }, []);
 
     const categories = ["All", ...Array.from(new Set(posts.map((p) => p.category).filter(Boolean)))];

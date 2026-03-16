@@ -1,12 +1,18 @@
 [build]
-  # No frontend build needed - frontend is hosted on BigRock
-  publish = "public"
-  command = "# no build"
+  # Build and publish the Vite frontend so latest UI changes are deployed
+  publish = "dist"
+  command = "npm run build"
   functions = "netlify/functions"
 
 # Proxy /api requests to Netlify functions
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
+  status = 200
+
+# SPA fallback — must be LAST so the /api/* rule above takes priority
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
   status = 200
 

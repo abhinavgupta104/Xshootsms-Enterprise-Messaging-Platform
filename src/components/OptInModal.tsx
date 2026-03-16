@@ -156,7 +156,7 @@ export const OptInModal = ({ open, onClose }: OptInModalProps) => {
                       />
                       <span>
                         I agree to receive communication from{" "}
-                        <strong>Xshootsms</strong> via SMS, WhatsApp, Email, or
+                        <strong>Xshootsms</strong> via RCS, SMS, WhatsApp, Email, or
                         Call. I understand I can opt out anytime.
                       </span>
                     </label>

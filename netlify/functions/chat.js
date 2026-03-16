@@ -17,8 +17,9 @@ export const handler = async (event, context) => {
     try {
         const { messages, userInfo } = JSON.parse(event.body || '{}');
         const GROQ_API_KEY = process.env.GROQ_API_KEY;
+        const cleanKey = GROQ_API_KEY ? GROQ_API_KEY.replace(/^"|"$/g, '') : null;
 
-        if (!GROQ_API_KEY) {
+        if (!cleanKey) {
             console.error('Missing GROQ_API_KEY environment variable');
             return {
                 statusCode: 500,
@@ -31,7 +32,7 @@ export const handler = async (event, context) => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${GROQ_API_KEY}`
+                'Authorization': `Bearer ${cleanKey}`
             },
             body: JSON.stringify({
                 model: 'llama-3.1-8b-instant', // Fast and accurate model on Groq

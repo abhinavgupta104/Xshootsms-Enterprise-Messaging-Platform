@@ -975,10 +975,10 @@ const Pricing = () => {
               </motion.span>
 
               <h1 className="text-5xl md:text-7xl font-black mb-8 leading-tight">
-                <span className="text-foreground">Transparent Pricing</span>
+                <span className="text-foreground">Scale Conversations, Not Costs</span>
                 <br />
                 <span className="">
-                  Across All Channels
+                  Across SMS, Voice, RCS & WhatsApp
                 </span>
               </h1>
 

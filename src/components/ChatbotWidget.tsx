@@ -3,9 +3,12 @@ import { MessageCircle, X, Send, User, Phone } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
-// In local dev, VITE_API_URL is empty so it uses the Vite proxy (/api).
-// In production, it points to the Netlify functions URL.
-const API_BASE = import.meta.env.VITE_API_URL || '';
+// In local dev, leave this empty to use the Vite proxy (/api).
+// In production, default to same-origin Netlify redirects unless a valid external API URL is provided.
+const rawApiBase = (import.meta.env.VITE_API_URL || '').trim().replace(/\/+$/, '');
+const localApiBasePattern = /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/i;
+const API_BASE = import.meta.env.PROD && localApiBasePattern.test(rawApiBase) ? '' : rawApiBase;
+const apiUrl = (path: '/api/chat' | '/api/lead') => `${API_BASE}${path}`;
 
 interface Message {
     role: 'user' | 'assistant';
@@ -51,11 +54,17 @@ export default function ChatbotWidget() {
 
         // Send lead data to our secure Netlify backend -> Google Sheets
         try {
-            await fetch(`${API_BASE}/api/lead`, {
+            const response = await fetch(apiUrl('/api/lead'), {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ ...info, source: "Chatbot" })
             });
+
+            if (!response.ok) {
+                const text = await response.text();
+                throw new Error(text || `Lead API failed (${response.status})`);
+            }
+
             console.log("Lead successfully sent to backend.");
         } catch (error) {
             console.error('Failed to save new lead to Google Sheets', error);
@@ -102,7 +111,7 @@ export default function ChatbotWidget() {
 
         try {
             // This URL will point to our serverless API route
-            const response = await fetch(`${API_BASE}/api/chat`, {
+            const response = await fetch(apiUrl('/api/chat'), {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -111,7 +120,10 @@ export default function ChatbotWidget() {
                 })
             });
 
-            if (!response.ok) throw new Error('API Error');
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(errorText || `Chat API failed (${response.status})`);
+            }
 
             const data = await response.json();
 
@@ -133,6 +145,7 @@ export default function ChatbotWidget() {
             }, 10); // 10ms per character
 
         } catch (error) {
+            console.error('Chat API request failed:', error);
             setMessages(prev => [...prev, { role: 'assistant', content: 'Sorry, I am having trouble connecting right now.' }]);
         } finally {
             setIsLoading(false);

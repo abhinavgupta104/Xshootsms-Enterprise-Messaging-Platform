@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#081210"/><stop offset="100%" stop-color="#0a1614"/>
+    </linearGradient>
+    <linearGradient id="ac" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#06b6d4"/><stop offset="100%" stop-color="#2dd4bf"/>
+    </linearGradient>
+    <linearGradient id="gw" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.3"/><stop offset="100%" stop-color="#14b8a6" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="sg"><feGaussianBlur stdDeviation="40"/></filter>
+    <filter id="g1"><feGaussianBlur stdDeviation="18" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <g opacity="0.04" stroke="#fff" stroke-width="0.5">
+    <line x1="0" y1="100" x2="800" y2="100"/><line x1="0" y1="200" x2="800" y2="200"/><line x1="0" y1="300" x2="800" y2="300"/><line x1="0" y1="400" x2="800" y2="400"/>
+    <line x1="200" y1="0" x2="200" y2="500"/><line x1="400" y1="0" x2="400" y2="500"/><line x1="600" y1="0" x2="600" y2="500"/>
+  </g>
+  <ellipse cx="400" cy="260" rx="280" ry="200" fill="url(#gw)" filter="url(#sg)"/>
+  <!-- Main dashboard panel -->
+  <rect x="120" y="60" width="560" height="370" rx="18" fill="#0c1a18" stroke="#06b6d4" stroke-opacity="0.1" stroke-width="1"/>
+  <!-- Tab bar -->
+  <rect x="128" y="68" width="544" height="32" rx="0" fill="#0f1f1c"/>
+  <rect x="136" y="76" width="70" height="16" rx="8" fill="#06b6d4" opacity="0.15"/>
+  <text x="150" y="88" font-family="Inter,sans-serif" font-size="7" fill="#06b6d4" font-weight="600">Chats</text>
+  <text x="226" y="88" font-family="Inter,sans-serif" font-size="7" fill="#2dd4bf" opacity="0.4">Campaigns</text>
+  <text x="306" y="88" font-family="Inter,sans-serif" font-size="7" fill="#2dd4bf" opacity="0.4">Templates</text>
+  <text x="386" y="88" font-family="Inter,sans-serif" font-size="7" fill="#2dd4bf" opacity="0.4">Analytics</text>
+  <!-- Chat list -->
+  <rect x="128" y="108" width="160" height="314" fill="#0a1614"/>
+  <text x="140" y="128" font-family="Inter,sans-serif" font-size="8" fill="#06b6d4" opacity="0.5" font-weight="600" letter-spacing="0.06em">CONVERSATIONS</text>
+  <!-- Chat items -->
+  <g transform="translate(136,138)">
+    <rect x="0" y="0" width="144" height="46" rx="8" fill="#06b6d4" opacity="0.08"/>
+    <circle cx="16" cy="23" r="12" fill="#06b6d4" opacity="0.2"/>
+    <text x="12" y="27" font-family="Inter,sans-serif" font-size="10" fill="#06b6d4">👤</text>
+    <text x="34" y="18" font-family="Inter,sans-serif" font-size="8" fill="#fff" opacity="0.8" font-weight="500">Priya Sharma</text>
+    <text x="34" y="30" font-family="Inter,sans-serif" font-size="7" fill="#2dd4bf" opacity="0.4">I'd like to place an order…</text>
+    <circle cx="130" cy="14" r="6" fill="#06b6d4" opacity="0.8"/>
+    <text x="128" y="17" font-family="Inter,sans-serif" font-size="6" fill="#fff" font-weight="600">3</text>
+  </g>
+  <g transform="translate(136,192)">
+    <rect x="0" y="0" width="144" height="46" rx="8" fill="transparent"/>
+    <circle cx="16" cy="23" r="12" fill="#14b8a6" opacity="0.1"/>
+    <text x="12" y="27" font-family="Inter,sans-serif" font-size="10" fill="#14b8a6">🏢</text>
+    <text x="34" y="18" font-family="Inter,sans-serif" font-size="8" fill="#fff" opacity="0.5" font-weight="500">Retail Corp</text>
+    <text x="34" y="30" font-family="Inter,sans-serif" font-size="7" fill="#2dd4bf" opacity="0.3">Thanks for the update!</text>
+  </g>
+  <g transform="translate(136,244)">
+    <rect x="0" y="0" width="144" height="46" rx="8" fill="transparent"/>
+    <circle cx="16" cy="23" r="12" fill="#14b8a6" opacity="0.1"/>
+    <text x="12" y="27" font-family="Inter,sans-serif" font-size="10" fill="#14b8a6">📦</text>
+    <text x="34" y="18" font-family="Inter,sans-serif" font-size="8" fill="#fff" opacity="0.5" font-weight="500">Logistics Hub</text>
+    <text x="34" y="30" font-family="Inter,sans-serif" font-size="7" fill="#2dd4bf" opacity="0.3">Shipment confirmed ✓</text>
+  </g>
+  <!-- Chat window -->
+  <rect x="296" y="108" width="376" height="314" fill="#081210"/>
+  <!-- Chat header -->
+  <rect x="296" y="108" width="376" height="36" fill="#0c1a18"/>
+  <circle cx="316" cy="126" r="10" fill="url(#ac)" opacity="0.3"/>
+  <text x="312" y="130" font-family="Inter,sans-serif" font-size="10" fill="#06b6d4">👤</text>
+  <text x="332" y="123" font-family="Inter,sans-serif" font-size="9" fill="#fff" opacity="0.8" font-weight="500">Priya Sharma</text>
+  <text x="332" y="133" font-family="Inter,sans-serif" font-size="7" fill="#22c55e">Online</text>
+  <circle cx="640" cy="126" r="8" fill="#06b6d4" opacity="0.1"/>
+  <text x="636" y="130" font-family="Inter,sans-serif" font-size="8" fill="#06b6d4">⋯</text>
+  <!-- Messages -->
+  <rect x="310" y="158" width="180" height="32" rx="10" fill="#0c1a18" stroke="#06b6d4" stroke-opacity="0.08"/>
+  <text x="322" y="178" font-family="Inter,sans-serif" font-size="8" fill="#fff" opacity="0.6">Hi! I need help with my order 🛒</text>
+  <!-- Bot reply -->
+  <rect x="390" y="200" width="200" height="50" rx="10" fill="#06b6d4" opacity="0.1"/>
+  <text x="402" y="218" font-family="Inter,sans-serif" font-size="8" fill="#2dd4bf">Sure! Let me look up your order.</text>
+  <text x="402" y="232" font-family="Inter,sans-serif" font-size="7" fill="#2dd4bf" opacity="0.6">Please share your order number.</text>
+  <rect x="560" y="240" width="24" height="8" rx="4" fill="#06b6d4" opacity="0.15"/>
+  <text x="565" y="247" font-family="Inter,sans-serif" font-size="5" fill="#06b6d4" opacity="0.5">BOT</text>
+  <!-- User reply -->
+  <rect x="310" y="262" width="120" height="26" rx="10" fill="#0c1a18" stroke="#06b6d4" stroke-opacity="0.08"/>
+  <text x="322" y="279" font-family="Inter,sans-serif" font-size="8" fill="#fff" opacity="0.6">Order #XS-2847</text>
+  <!-- Bot response with card -->
+  <rect x="360" y="298" width="240" height="70" rx="10" fill="#06b6d4" opacity="0.08"/>
+  <text x="372" y="316" font-family="Inter,sans-serif" font-size="8" fill="#2dd4bf" font-weight="500">📦 Order #XS-2847</text>
+  <text x="372" y="330" font-family="Inter,sans-serif" font-size="7" fill="#2dd4bf" opacity="0.6">Status: Shipped • ETA: Tomorrow</text>
+  <rect x="372" y="340" width="50" height="14" rx="7" fill="url(#ac)" opacity="0.3"/>
+  <text x="382" y="350" font-family="Inter,sans-serif" font-size="6" fill="#06b6d4" font-weight="600">Track</text>
+  <rect x="428" y="340" width="50" height="14" rx="7" fill="#0c1a18" stroke="#06b6d4" stroke-opacity="0.2"/>
+  <text x="436" y="350" font-family="Inter,sans-serif" font-size="6" fill="#2dd4bf">Help</text>
+  <!-- Input bar -->
+  <rect x="304" y="388" width="360" height="26" rx="13" fill="#0c1a18" stroke="#06b6d4" stroke-opacity="0.1"/>
+  <text x="318" y="405" font-family="Inter,sans-serif" font-size="8" fill="#06b6d4" opacity="0.3">Type a message…</text>
+  <circle cx="644" cy="401" r="9" fill="url(#ac)" opacity="0.4"/>
+  <text x="640" y="405" font-family="Inter,sans-serif" font-size="9" fill="#fff">→</text>
+  <!-- Floating dots -->
+  <g filter="url(#g1)" opacity="0.6">
+    <circle cx="60" cy="140" r="3" fill="#06b6d4"/><circle cx="740" cy="90" r="4" fill="#2dd4bf"/>
+    <circle cx="60" cy="400" r="2" fill="#14b8a6"/><circle cx="740" cy="420" r="3" fill="#06b6d4"/>
+  </g>
+  <circle cx="60" cy="280" r="35" fill="none" stroke="#06b6d4" stroke-opacity="0.04"/>
+  <circle cx="740" cy="260" r="30" fill="none" stroke="#06b6d4" stroke-opacity="0.03"/>
+</svg>

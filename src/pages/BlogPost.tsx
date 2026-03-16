@@ -114,6 +114,8 @@ const getFallbackPost = (slug: string | undefined) => {
     return fallbackPosts[slug || ""] || null;
 };
 
+const BLOG_POST_FETCH_TIMEOUT_MS = 8000;
+
 /* ── Main Component ───────────────────────────────────────── */
 
 export const BlogPost = () => {
@@ -123,6 +125,7 @@ export const BlogPost = () => {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
+        let isMounted = true;
         const query = `*[_type == "post" && slug.current == $slug][0]{
       title, body, mainImage,
       "author": author->name,
@@ -130,15 +133,28 @@ export const BlogPost = () => {
       "category": categories[0]->title,
       excerpt
     }`;
-        client.fetch(query, { slug })
+
+        const timeoutPromise = new Promise<never>((_, reject) => {
+            setTimeout(() => reject(new Error("Blog post fetch timeout")), BLOG_POST_FETCH_TIMEOUT_MS);
+        });
+
+        Promise.race([client.fetch(query, { slug }), timeoutPromise])
             .then((data) => {
+                if (!isMounted) return;
                 setPost(data ?? getFallbackPost(slug));
-                setIsLoading(false);
             })
             .catch(() => {
+                if (!isMounted) return;
                 setPost(getFallbackPost(slug));
+            })
+            .finally(() => {
+                if (!isMounted) return;
                 setIsLoading(false);
             });
+
+        return () => {
+            isMounted = false;
+        };
     }, [slug]);
 
     /* Share helpers */

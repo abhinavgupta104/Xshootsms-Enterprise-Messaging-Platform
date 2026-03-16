@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0c0c1a"/><stop offset="100%" stop-color="#12101f"/>
+    </linearGradient>
+    <linearGradient id="ac" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+    <linearGradient id="gw" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.35"/><stop offset="100%" stop-color="#a855f7" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="g1"><feGaussianBlur stdDeviation="20" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="sg"><feGaussianBlur stdDeviation="40"/></filter>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <g opacity="0.04" stroke="#fff" stroke-width="0.5">
+    <line x1="0" y1="100" x2="800" y2="100"/><line x1="0" y1="200" x2="800" y2="200"/><line x1="0" y1="300" x2="800" y2="300"/><line x1="0" y1="400" x2="800" y2="400"/>
+    <line x1="200" y1="0" x2="200" y2="500"/><line x1="400" y1="0" x2="400" y2="500"/><line x1="600" y1="0" x2="600" y2="500"/>
+  </g>
+  <ellipse cx="340" cy="250" rx="260" ry="200" fill="url(#gw)" filter="url(#sg)"/>
+  <!-- Phone -->
+  <rect x="240" y="60" width="200" height="380" rx="24" fill="#16141f" stroke="#8b5cf6" stroke-opacity="0.3" stroke-width="1.5"/>
+  <rect x="300" y="65" width="80" height="6" rx="3" fill="#1e1b2e"/>
+  <text x="260" y="88" font-family="Inter,system-ui,sans-serif" font-size="9" fill="#8b5cf6" opacity="0.6">9:41</text>
+  <!-- Chat header -->
+  <rect x="248" y="96" width="184" height="32" fill="#1a1730"/>
+  <circle cx="264" cy="112" r="10" fill="url(#ac)" opacity="0.7"/>
+  <text x="280" y="110" font-family="Inter,sans-serif" font-size="9" fill="#c084fc" font-weight="600">Verified Brand ✓</text>
+  <text x="280" y="120" font-family="Inter,sans-serif" font-size="7" fill="#a78bfa" opacity="0.5">RCS Business Messaging</text>
+  <!-- Bubble 1 -->
+  <rect x="258" y="140" width="150" height="48" rx="12" fill="#2d2550"/>
+  <text x="270" y="157" font-family="Inter,sans-serif" font-size="8" fill="#e0d4fc">New collection is live! 🎉</text>
+  <text x="270" y="170" font-family="Inter,sans-serif" font-size="7" fill="#a78bfa" opacity="0.7">Explore premium styles</text>
+  <rect x="270" y="176" width="56" height="9" rx="4" fill="url(#ac)" opacity="0.8"/>
+  <text x="280" y="183" font-family="Inter,sans-serif" font-size="5.5" fill="#fff" font-weight="600">Shop Now</text>
+  <!-- Rich card -->
+  <rect x="258" y="196" width="150" height="88" rx="12" fill="#2d2550"/>
+  <rect x="262" y="200" width="142" height="48" rx="8" fill="#3b3370"/>
+  <rect x="274" y="214" width="50" height="6" rx="3" fill="#8b5cf6" opacity="0.6"/>
+  <rect x="274" y="224" width="30" height="4" rx="2" fill="#a78bfa" opacity="0.3"/>
+  <rect x="335" y="210" width="55" height="32" rx="6" fill="#4c3d99" opacity="0.5"/>
+  <text x="349" y="231" font-family="Inter,sans-serif" font-size="11" fill="#c084fc" opacity="0.6">📱</text>
+  <rect x="266" y="255" width="42" height="8" rx="4" fill="url(#ac)" opacity="0.7"/>
+  <text x="274" y="261.5" font-family="Inter,sans-serif" font-size="5" fill="#fff">View</text>
+  <rect x="313" y="255" width="42" height="8" rx="4" fill="#3b3370"/>
+  <text x="321" y="261.5" font-family="Inter,sans-serif" font-size="5" fill="#a78bfa">Share</text>
+  <circle cx="318" cy="292" r="2" fill="#8b5cf6"/><circle cx="326" cy="292" r="2" fill="#8b5cf6" opacity="0.3"/><circle cx="334" cy="292" r="2" fill="#8b5cf6" opacity="0.3"/>
+  <!-- Reply -->
+  <rect x="302" y="302" width="118" height="26" rx="12" fill="#8b5cf6" opacity="0.2"/>
+  <text x="314" y="319" font-family="Inter,sans-serif" font-size="8" fill="#c084fc">Interested! 👍</text>
+  <!-- Quick replies -->
+  <rect x="258" y="340" width="52" height="16" rx="8" fill="none" stroke="#8b5cf6" stroke-opacity="0.3"/>
+  <text x="266" y="351" font-family="Inter,sans-serif" font-size="6.5" fill="#a78bfa">Track</text>
+  <rect x="315" y="340" width="52" height="16" rx="8" fill="none" stroke="#8b5cf6" stroke-opacity="0.3"/>
+  <text x="323" y="351" font-family="Inter,sans-serif" font-size="6.5" fill="#a78bfa">Support</text>
+  <rect x="372" y="340" width="52" height="16" rx="8" fill="none" stroke="#8b5cf6" stroke-opacity="0.3"/>
+  <text x="382" y="351" font-family="Inter,sans-serif" font-size="6.5" fill="#a78bfa">Info</text>
+  <!-- Input -->
+  <rect x="248" y="370" width="184" height="26" fill="#1a1730"/>
+  <rect x="258" y="376" width="126" height="14" rx="7" fill="#2d2550"/>
+  <text x="268" y="386" font-family="Inter,sans-serif" font-size="7" fill="#8b5cf6" opacity="0.4">Type a message…</text>
+  <!-- Side metrics -->
+  <g transform="translate(520,110)">
+    <rect width="180" height="68" rx="14" fill="#16141f" stroke="#8b5cf6" stroke-opacity="0.12"/>
+    <text x="16" y="22" font-family="Inter,sans-serif" font-size="8" fill="#8b5cf6" opacity="0.6" font-weight="600" letter-spacing="0.06em">DELIVERY RATE</text>
+    <text x="16" y="48" font-family="Inter,sans-serif" font-size="22" fill="#c084fc" font-weight="800">98.7%</text>
+    <rect x="108" y="22" width="54" height="30" rx="4" fill="#2d2550"/>
+    <polyline points="116,44 124,34 132,38 140,30 150,32" fill="none" stroke="#8b5cf6" stroke-width="1.5"/>
+  </g>
+  <g transform="translate(520,198)">
+    <rect width="180" height="68" rx="14" fill="#16141f" stroke="#8b5cf6" stroke-opacity="0.12"/>
+    <text x="16" y="22" font-family="Inter,sans-serif" font-size="8" fill="#8b5cf6" opacity="0.6" font-weight="600" letter-spacing="0.06em">ENGAGEMENT</text>
+    <text x="16" y="48" font-family="Inter,sans-serif" font-size="22" fill="#c084fc" font-weight="800">4.2x</text>
+    <text x="76" y="48" font-family="Inter,sans-serif" font-size="10" fill="#22c55e">↑ vs SMS</text>
+  </g>
+  <g transform="translate(520,286)">
+    <rect width="180" height="68" rx="14" fill="#16141f" stroke="#8b5cf6" stroke-opacity="0.12"/>
+    <text x="16" y="22" font-family="Inter,sans-serif" font-size="8" fill="#8b5cf6" opacity="0.6" font-weight="600" letter-spacing="0.06em">CTR LIFT</text>
+    <text x="16" y="48" font-family="Inter,sans-serif" font-size="22" fill="#c084fc" font-weight="800">+35%</text>
+    <g transform="translate(90,16)"><rect x="0" y="0" width="70" height="38" rx="4" fill="#2d2550"/>
+      <rect x="8" y="24" width="8" height="10" rx="1" fill="#8b5cf6" opacity="0.4"/>
+      <rect x="20" y="18" width="8" height="16" rx="1" fill="#8b5cf6" opacity="0.6"/>
+      <rect x="32" y="12" width="8" height="22" rx="1" fill="#8b5cf6" opacity="0.8"/>
+      <rect x="44" y="6" width="8" height="28" rx="1" fill="url(#ac)"/>
+      <rect x="56" y="10" width="8" height="24" rx="1" fill="#a855f7" opacity="0.7"/>
+    </g>
+  </g>
+  <!-- Floating dots -->
+  <g filter="url(#g1)" opacity="0.7">
+    <circle cx="120" cy="140" r="4" fill="#8b5cf6"/><circle cx="660" cy="90" r="3" fill="#a855f7"/>
+    <circle cx="700" cy="350" r="5" fill="#7c3aed"/><circle cx="100" cy="380" r="3" fill="#c084fc"/>
+  </g>
+  <circle cx="100" cy="250" r="60" fill="none" stroke="#8b5cf6" stroke-opacity="0.05" stroke-width="1"/>
+  <circle cx="100" cy="250" r="40" fill="none" stroke="#8b5cf6" stroke-opacity="0.03" stroke-width="1"/>
+</svg>
